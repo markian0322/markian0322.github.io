@@ -1,541 +1,480 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Mark Ian Lazaro</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV - Mark Ian Lazaro</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+<style>
+* {
+    box-sizing: border-box;
+}
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #e9ecef;
-            color: #333;
-            padding: 40px 20px;
-        }
+body {
+    margin: 0;
+    background: #e5e7eb;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+}
 
-        .cv {
-            max-width: 1000px;
-            margin: auto;
-            background: white;
-            display: grid;
-            grid-template-columns: 290px 1fr;
-            box-shadow: 0 10px 35px rgba(0,0,0,0.15);
-            border-radius: 10px;
-            overflow: hidden;
-        }
+.cv {
+    width: 900px;
+    min-height: 1150px;
+    margin: 40px auto;
+    background: white;
+    display: grid;
+    grid-template-columns: 290px 1fr;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+}
 
-        /* ================= SIDEBAR ================= */
+/* LEFT SIDEBAR */
+.sidebar {
+    background: #173c57;
+    color: white;
+    padding: 40px 35px;
+}
 
-        .sidebar {
-            background: #1f2937;
-            color: white;
-            padding: 35px 28px;
-        }
+.profile-photo {
+    width: 145px;
+    height: 145px;
+    margin: 0 auto 45px;
+    border-radius: 50%;
+    border: 5px solid white;
+    overflow: hidden;
+    background: #d9d9d9;
+}
 
-        .profile {
-            text-align: center;
-            margin-bottom: 35px;
-        }
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-        .profile-photo {
-            width: 125px;
-            height: 125px;
-            margin: auto;
-            border-radius: 50%;
-            background: #374151;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 45px;
-            font-weight: bold;
-            border: 5px solid #ffffff;
-            margin-bottom: 15px;
-        }
+/* Sidebar Sections */
+.side-section {
+    margin-bottom: 35px;
+}
 
-        .profile h1 {
-            font-size: 24px;
-            letter-spacing: 1px;
-        }
+.side-title {
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #aebfc9;
+}
 
-        .profile p {
-            color: #d1d5db;
-            margin-top: 7px;
-            font-size: 14px;
-        }
+.side-section p,
+.side-section li {
+    font-size: 13px;
+    line-height: 1.6;
+}
 
-        .side-section {
-            margin-bottom: 30px;
-        }
+.contact p {
+    margin: 13px 0;
+}
 
-        .side-section h2 {
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            border-bottom: 1px solid #6b7280;
-            padding-bottom: 8px;
-            margin-bottom: 15px;
-        }
+.education-item {
+    margin-bottom: 20px;
+}
 
-        .contact-item {
-            margin-bottom: 13px;
-            font-size: 13px;
-            line-height: 1.5;
-            word-break: break-word;
-        }
+.education-item .year {
+    font-weight: bold;
+    font-size: 13px;
+}
 
-        .contact-item span {
-            display: block;
-            color: #9ca3af;
-            font-size: 11px;
-            text-transform: uppercase;
-            margin-bottom: 2px;
-        }
+.education-item strong {
+    display: block;
+    margin-top: 4px;
+    font-size: 13px;
+}
 
-        .skill {
-            margin-bottom: 13px;
-        }
+.skills ul,
+.languages ul {
+    padding-left: 18px;
+    margin: 8px 0;
+}
 
-        .skill-name {
-            display: flex;
-            justify-content: space-between;
-            font-size: 12px;
-            margin-bottom: 5px;
-        }
+.skills li,
+.languages li {
+    margin-bottom: 5px;
+}
 
-        .bar {
-            height: 6px;
-            background: #4b5563;
-            border-radius: 10px;
-            overflow: hidden;
-        }
+/* RIGHT SIDE */
+.main {
+    padding: 55px 45px;
+}
 
-        .bar-fill {
-            height: 100%;
-            background: white;
-            border-radius: 10px;
-        }
+.name {
+    font-size: 38px;
+    margin: 0;
+    font-weight: 800;
+    color: #333;
+    letter-spacing: 1px;
+}
 
-        /* ================= MAIN ================= */
+.name span {
+    color: #173c57;
+    font-weight: 400;
+}
 
-        .main {
-            padding: 40px;
-        }
+.position {
+    margin-top: 8px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: #666;
+}
 
-        .section {
-            margin-bottom: 30px;
-        }
+.short-line {
+    width: 65px;
+    height: 4px;
+    background: #173c57;
+    margin: 14px 0 55px;
+}
 
-        .section-title {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: #1f2937;
-            font-size: 18px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-bottom: 2px solid #1f2937;
-            padding-bottom: 8px;
-            margin-bottom: 17px;
-        }
+/* Main Sections */
+.main-section {
+    margin-bottom: 35px;
+}
 
-        .section-title::before {
-            content: "";
-            width: 8px;
-            height: 8px;
-            background: #1f2937;
-            border-radius: 50%;
-        }
+.main-title {
+    color: #173c57;
+    font-size: 19px;
+    letter-spacing: 2px;
+    border-bottom: 2px solid #9ba8af;
+    padding-bottom: 8px;
+    margin-bottom: 14px;
+}
 
-        .objective {
-            line-height: 1.7;
-            font-size: 14px;
-            color: #555;
-            text-align: justify;
-        }
+.profile-text {
+    font-size: 13px;
+    line-height: 1.65;
+    text-align: justify;
+}
 
-        .education-item,
-        .project-item {
-            position: relative;
-            padding-left: 20px;
-            border-left: 2px solid #d1d5db;
-            margin-bottom: 22px;
-        }
+/* Timeline */
+.timeline {
+    border-left: 2px solid #8c9aa2;
+    padding-left: 20px;
+    margin-left: 4px;
+}
 
-        .education-item::before,
-        .project-item::before {
-            content: "";
-            position: absolute;
-            left: -6px;
-            top: 2px;
-            width: 10px;
-            height: 10px;
-            background: #1f2937;
-            border-radius: 50%;
-        }
+.timeline-item {
+    position: relative;
+    margin-bottom: 25px;
+}
 
-        .education-item h3,
-        .project-item h3 {
-            font-size: 16px;
-            color: #222;
-            margin-bottom: 5px;
-        }
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    background: #173c57;
+    border-radius: 50%;
+    left: -26px;
+    top: 5px;
+}
 
-        .school {
-            font-weight: bold;
-            color: #555;
-            font-size: 14px;
-        }
+.timeline-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
 
-        .date {
-            display: inline-block;
-            margin-top: 5px;
-            font-size: 12px;
-            color: #777;
-        }
+.timeline-header h3 {
+    margin: 0;
+    font-size: 15px;
+}
 
-        .project-item p {
-            font-size: 14px;
-            color: #555;
-            line-height: 1.6;
-            margin-top: 8px;
-        }
+.date {
+    font-size: 12px;
+    color: #666;
+    white-space: nowrap;
+}
 
-        .project-item ul {
-            margin: 10px 0 0 18px;
-            color: #555;
-            font-size: 13px;
-            line-height: 1.7;
-        }
+.job-title {
+    font-size: 13px;
+    color: #666;
+    margin: 5px 0;
+}
 
-        .personal-info {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
+.timeline-item ul {
+    margin: 7px 0;
+    padding-left: 18px;
+}
 
-        .info-box {
-            background: #f5f6f7;
-            padding: 12px 15px;
-            border-radius: 6px;
-            font-size: 13px;
-        }
+.timeline-item li {
+    font-size: 12px;
+    line-height: 1.6;
+}
 
-        .info-box strong {
-            display: block;
-            color: #333;
-            margin-bottom: 4px;
-        }
+/* References */
+.references {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
 
-        /* ================= RESPONSIVE ================= */
+.reference h3 {
+    font-size: 14px;
+    margin: 0 0 5px;
+}
 
-        @media (max-width: 750px) {
-            body {
-                padding: 10px;
-            }
+.reference p {
+    font-size: 11px;
+    margin: 4px 0;
+    line-height: 1.5;
+}
 
-            .cv {
-                grid-template-columns: 1fr;
-            }
+/* Mobile */
+@media (max-width: 750px) {
+    .cv {
+        width: 100%;
+        margin: 0;
+        grid-template-columns: 1fr;
+    }
 
-            .sidebar {
-                text-align: center;
-            }
+    .sidebar {
+        padding: 30px;
+    }
 
-            .contact-item {
-                text-align: left;
-            }
+    .main {
+        padding: 35px 25px;
+    }
 
-            .main {
-                padding: 25px;
-            }
+    .name {
+        font-size: 30px;
+    }
 
-            .personal-info {
-                grid-template-columns: 1fr;
-            }
-        }
+    .references {
+        grid-template-columns: 1fr;
+    }
+}
 
-        /* ================= PRINT ================= */
+/* Print */
+@media print {
+    body {
+        background: white;
+    }
 
-        @media print {
-            body {
-                background: white;
-                padding: 0;
-            }
-
-            .cv {
-                box-shadow: none;
-                border-radius: 0;
-                max-width: 100%;
-            }
-        }
-    </style>
+    .cv {
+        width: 100%;
+        margin: 0;
+        box-shadow: none;
+    }
+}
+</style>
 </head>
 
 <body>
 
 <div class="cv">
 
-    <!-- ================= SIDEBAR ================= -->
-
+    <!-- ================= LEFT SIDEBAR ================= -->
     <aside class="sidebar">
 
-        <div class="profile">
-
-            <!-- Replace the initials with your photo if desired -->
-            <div class="profile-photo">
-                ML
-            </div>
-
-            <h1>MARK IAN LAZARO</h1>
-            <p>BS Information Technology Student</p>
-
+        <!-- PROFILE PHOTO -->
+        <div class="profile-photo">
+            <!-- Replace profile.jpg with your photo -->
+            <img src="profile.jpg" alt="Mark Ian Lazaro">
         </div>
 
 
         <!-- CONTACT -->
+        <div class="side-section contact">
 
+            <div class="side-title">CONTACT</div>
+
+            <p>☎ &nbsp; 0907-346-7380</p>
+
+            <p>✉ &nbsp; markianlazaro@gmail.com</p>
+
+            <p>⌖ &nbsp; Damortis, Santo Tomas, La Union</p>
+
+        </div>
+
+
+        <!-- EDUCATION -->
         <div class="side-section">
 
-            <h2>Contact</h2>
+            <div class="side-title">EDUCATION</div>
 
-            <div class="contact-item">
-                <span>Email</span>
-                markianlazaro@gmail.com
+            <div class="education-item">
+                <div class="year">2023 - PRESENT</div>
+                <strong>PHINMA UNIVERSITY OF PANGASINAN</strong>
+                <p>• Bachelor of Science in Information Technology</p>
+                <p>• 4th Year College</p>
             </div>
 
-            <div class="contact-item">
-                <span>Phone</span>
-                0907-346-7380
+            <div class="education-item">
+                <div class="year">2021 - 2023</div>
+                <strong>DAMORTIS NATIONAL HIGH SCHOOL</strong>
+                <p>• Senior High School</p>
+                <p>• Graduated: 2023</p>
             </div>
 
-            <div class="contact-item">
-                <span>Location</span>
-                Damortis, Santo Tomas, La Union
+            <div class="education-item">
+                <strong>DAMORTIS ELEMENTARY SCHOOL</strong>
             </div>
 
         </div>
 
 
         <!-- SKILLS -->
+        <div class="side-section skills">
 
-        <div class="side-section">
+            <div class="side-title">SKILLS</div>
 
-            <h2>Skills</h2>
-
-            <div class="skill">
-                <div class="skill-name">
-                    <span>HTML</span>
-                    <span>90%</span>
-                </div>
-                <div class="bar">
-                    <div class="bar-fill" style="width:90%;"></div>
-                </div>
-            </div>
-
-            <div class="skill">
-                <div class="skill-name">
-                    <span>CSS</span>
-                    <span>85%</span>
-                </div>
-                <div class="bar">
-                    <div class="bar-fill" style="width:85%;"></div>
-                </div>
-            </div>
-
-            <div class="skill">
-                <div class="skill-name">
-                    <span>JavaScript</span>
-                    <span>75%</span>
-                </div>
-                <div class="bar">
-                    <div class="bar-fill" style="width:75%;"></div>
-                </div>
-            </div>
-
-            <div class="skill">
-                <div class="skill-name">
-                    <span>UI/UX Design</span>
-                    <span>85%</span>
-                </div>
-                <div class="bar">
-                    <div class="bar-fill" style="width:85%;"></div>
-                </div>
-            </div>
-
-            <div class="skill">
-                <div class="skill-name">
-                    <span>Database</span>
-                    <span>75%</span>
-                </div>
-                <div class="bar">
-                    <div class="bar-fill" style="width:75%;"></div>
-                </div>
-            </div>
-
-            <div class="skill">
-                <div class="skill-name">
-                    <span>Teamwork</span>
-                    <span>90%</span>
-                </div>
-                <div class="bar">
-                    <div class="bar-fill" style="width:90%;"></div>
-                </div>
-            </div>
+            <ul>
+                <li>HTML & CSS</li>
+                <li>JavaScript</li>
+                <li>UI/UX Design</li>
+                <li>Database Management</li>
+                <li>System Analysis</li>
+                <li>Problem Solving</li>
+                <li>Teamwork</li>
+                <li>Communication</li>
+                <li>Time Management</li>
+            </ul>
 
         </div>
 
 
-        <!-- PERSONAL -->
+        <!-- LANGUAGES -->
+        <div class="side-section languages">
 
-        <div class="side-section">
+            <div class="side-title">LANGUAGES</div>
 
-            <h2>Personal</h2>
-
-            <div class="contact-item">
-                <span>Date of Birth</span>
-                June 08, 2005
-            </div>
-
-            <div class="contact-item">
-                <span>Nationality</span>
-                Filipino
-            </div>
+            <ul>
+                <li>Filipino</li>
+                <li>English</li>
+            </ul>
 
         </div>
 
     </aside>
 
 
-    <!-- ================= MAIN CONTENT ================= -->
-
+    <!-- ================= RIGHT SIDE ================= -->
     <main class="main">
 
-        <!-- OBJECTIVE -->
+        <!-- HEADER -->
+        <h1 class="name">
+            MARK IAN <span>LAZARO</span>
+        </h1>
 
-        <section class="section">
+        <div class="position">
+            INFORMATION TECHNOLOGY STUDENT
+        </div>
 
-            <h2 class="section-title">
-                Career Objective
-            </h2>
+        <div class="short-line"></div>
 
-            <p class="objective">
-                A motivated 4th-year Information Technology student seeking
-                an opportunity to apply my technical knowledge, develop my
-                skills, and gain practical experience in a professional
-                working environment.
+
+        <!-- PROFILE -->
+        <section class="main-section">
+
+            <h2 class="main-title">PROFILE</h2>
+
+            <p class="profile-text">
+                A motivated 4th-year Bachelor of Science in Information
+                Technology student with an interest in web development,
+                system design, UI/UX design, and database management.
+                Experienced in working on academic software projects,
+                system testing, and team-based development. Eager to
+                gain practical experience and contribute technical and
+                problem-solving skills in a professional environment.
             </p>
 
         </section>
 
 
-        <!-- EDUCATION -->
-
-        <section class="section">
-
-            <h2 class="section-title">
-                Education
-            </h2>
-
-            <div class="education-item">
-
-                <h3>Bachelor of Science in Information Technology</h3>
-
-                <p class="school">
-                    PHINMA University of Pangasinan
-                </p>
-
-                <span class="date">
-                    4th Year College
-                </span>
-
-            </div>
-
-
-            <div class="education-item">
-
-                <h3>Senior High School</h3>
-
-                <p class="school">
-                    Damortis National High School
-                </p>
-
-                <span class="date">
-                    Graduated: 2023
-                </span>
-
-            </div>
-
-
-            <div class="education-item">
-
-                <h3>Elementary</h3>
-
-                <p class="school">
-                    Damortis Elementary School
-                </p>
-
-            </div>
-
-        </section>
-
-
-        <!-- PROJECT -->
-
-        <section class="section">
-
-            <h2 class="section-title">
-                Project Experience
-            </h2>
-
-            <div class="project-item">
-
-                <h3>
-                    ReFoundly: Digital Lost and Found Management System
-                </h3>
-
-                <p>
-                    A web-based lost and found management system designed
-                    to help users report, search, track, verify, and retrieve
-                    lost and found items.
-                </p>
-
-                <ul>
-                    <li>Designed system interfaces and workflows.</li>
-                    <li>Participated in database and system design.</li>
-                    <li>Conducted system testing and evaluation.</li>
-                    <li>Collaborated with team members using Agile/Scrum.</li>
-                </ul>
-
-            </div>
-
-        </section>
-
-
         <!-- WORK EXPERIENCE -->
+        <section class="main-section">
 
-        <section class="section">
+            <h2 class="main-title">WORK EXPERIENCE</h2>
 
-            <h2 class="section-title">
-                Work Experience
-            </h2>
+            <div class="timeline">
 
-            <div class="project-item">
+                <div class="timeline-item">
 
-                <h3>Crew Member</h3>
+                    <div class="timeline-header">
+                        <h3>McDonald's 909 Damortis</h3>
+                        <span class="date">SPES</span>
+                    </div>
 
-                <p class="school">
-                    McDonald's 909 Damortis, Sto. Tomas, La Union
-                </p>
+                    <div class="job-title">
+                        Crew Member
+                    </div>
 
-                <p>
-                    SPES Crew Member
-                </p>
+                    <ul>
+                        <li>
+                            Provided customer service and assisted
+                            customers with their needs.
+                        </li>
+
+                        <li>
+                            Worked effectively with team members in a
+                            fast-paced environment.
+                        </li>
+
+                        <li>
+                            Followed workplace procedures and maintained
+                            cleanliness and organization.
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROJECT EXPERIENCE -->
+        <section class="main-section">
+
+            <h2 class="main-title">PROJECT EXPERIENCE</h2>
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+
+                    <div class="timeline-header">
+                        <h3>
+                            ReFoundly
+                        </h3>
+
+                        <span class="date">
+                            Capstone Project
+                        </span>
+                    </div>
+
+                    <div class="job-title">
+                        Digital Lost and Found Management System
+                    </div>
+
+                    <ul>
+                        <li>
+                            Designed a web-based platform for reporting
+                            and searching lost and found items.
+                        </li>
+
+                        <li>
+                            Participated in system design, database design,
+                            and user interface development.
+                        </li>
+
+                        <li>
+                            Conducted system testing and evaluation.
+                        </li>
+
+                        <li>
+                            Collaborated with team members using
+                            Agile/Scrum methodology.
+                        </li>
+                    </ul>
+
+                </div>
 
             </div>
 
@@ -543,33 +482,40 @@
 
 
         <!-- PERSONAL INFORMATION -->
+        <section class="main-section">
 
-        <section class="section">
+            <h2 class="main-title">PERSONAL INFORMATION</h2>
 
-            <h2 class="section-title">
-                Personal Information
-            </h2>
+            <div class="profile-text">
 
-            <div class="personal-info">
+                <p><strong>Date of Birth:</strong> June 08, 2005</p>
+                <p><strong>Nationality:</strong> Filipino</p>
+                <p><strong>Address:</strong> Damortis, Santo Tomas, La Union</p>
 
-                <div class="info-box">
-                    <strong>Date of Birth</strong>
-                    June 08, 2005
+            </div>
+
+        </section>
+
+
+        <!-- REFERENCES -->
+        <section class="main-section">
+
+            <h2 class="main-title">REFERENCE</h2>
+
+            <div class="references">
+
+                <div class="reference">
+                    <h3>Reference Name</h3>
+                    <p>Position / Organization</p>
+                    <p>Phone: 09XX-XXX-XXXX</p>
+                    <p>Email: reference@email.com</p>
                 </div>
 
-                <div class="info-box">
-                    <strong>Nationality</strong>
-                    Filipino
-                </div>
-
-                <div class="info-box">
-                    <strong>Address</strong>
-                    Damortis, Santo Tomas, La Union
-                </div>
-
-                <div class="info-box">
-                    <strong>Phone</strong>
-                    0907-346-7380
+                <div class="reference">
+                    <h3>Reference Name</h3>
+                    <p>Position / Organization</p>
+                    <p>Phone: 09XX-XXX-XXXX</p>
+                    <p>Email: reference@email.com</p>
                 </div>
 
             </div>
