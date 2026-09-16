@@ -3,265 +3,476 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>CV - Mark Ian Lazaro</title>
 
 <style>
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    background: #e5e7eb;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #333;
-}
-
-.cv {
-    width: 900px;
-    min-height: 1150px;
-    margin: 40px auto;
-    background: white;
-    display: grid;
-    grid-template-columns: 290px 1fr;
-    box-shadow: 0 5px 25px rgba(0,0,0,0.15);
-}
-
-/* LEFT SIDEBAR */
-.sidebar {
-    background: #173c57;
-    color: white;
-    padding: 40px 35px;
-}
-
-.profile-photo {
-    width: 145px;
-    height: 145px;
-    margin: 0 auto 45px;
-    border-radius: 50%;
-    border: 5px solid white;
-    overflow: hidden;
-    background: #d9d9d9;
-}
-
-.profile-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.side-section {
-    margin-bottom: 35px;
-}
-
-.side-title {
-    font-size: 18px;
-    letter-spacing: 2px;
-    font-weight: bold;
-    margin-bottom: 8px;
-    padding-bottom: 8px;
-    border-bottom: 2px solid #aebfc9;
-}
-
-.side-section p,
-.side-section li {
-    font-size: 13px;
-    line-height: 1.6;
-}
-
-.contact p {
-    margin: 13px 0;
-}
-
-.education-item {
-    margin-bottom: 20px;
-}
-
-.education-item .year {
-    font-weight: bold;
-    font-size: 13px;
-}
-
-.education-item strong {
-    display: block;
-    margin-top: 4px;
-    font-size: 13px;
-}
-
-.skills ul,
-.languages ul {
-    padding-left: 18px;
-    margin: 8px 0;
-}
-
-.skills li,
-.languages li {
-    margin-bottom: 5px;
-}
-
-/* RIGHT SIDE */
-.main {
-    padding: 55px 45px;
-}
-
-.name {
-    font-size: 38px;
-    margin: 0;
-    font-weight: 800;
-    color: #333;
-    letter-spacing: 1px;
-}
-
-.name span {
-    color: #173c57;
-    font-weight: 400;
-}
-
-.position {
-    margin-top: 8px;
-    font-size: 18px;
-    letter-spacing: 1px;
-    color: #666;
-}
-
-.short-line {
-    width: 65px;
-    height: 4px;
-    background: #173c57;
-    margin: 14px 0 55px;
-}
-
-/* Main Sections */
-.main-section {
-    margin-bottom: 35px;
-}
-
-.main-title {
-    color: #173c57;
-    font-size: 19px;
-    letter-spacing: 2px;
-    border-bottom: 2px solid #9ba8af;
-    padding-bottom: 8px;
-    margin-bottom: 14px;
-}
-
-.profile-text {
-    font-size: 13px;
-    line-height: 1.65;
-    text-align: justify;
-}
-
-/* Timeline */
-.timeline {
-    border-left: 2px solid #8c9aa2;
-    padding-left: 20px;
-    margin-left: 4px;
-}
-
-.timeline-item {
-    position: relative;
-    margin-bottom: 25px;
-}
-
-.timeline-item::before {
-    content: "";
-    position: absolute;
-    width: 9px;
-    height: 9px;
-    background: #173c57;
-    border-radius: 50%;
-    left: -26px;
-    top: 5px;
-}
-
-.timeline-header {
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
-}
-
-.timeline-header h3 {
-    margin: 0;
-    font-size: 15px;
-}
-
-.date {
-    font-size: 12px;
-    color: #666;
-    white-space: nowrap;
-}
-
-.job-title {
-    font-size: 13px;
-    color: #666;
-    margin: 5px 0;
-}
-
-.timeline-item ul {
-    margin: 7px 0;
-    padding-left: 18px;
-}
-
-.timeline-item li {
-    font-size: 12px;
-    line-height: 1.6;
-}
-
-/* References */
-.references {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 25px;
-}
-
-.reference h3 {
-    font-size: 14px;
-    margin: 0 0 5px;
-}
-
-.reference p {
-    font-size: 11px;
-    margin: 4px 0;
-    line-height: 1.5;
-}
-
-/* Mobile */
-@media (max-width: 750px) {
-    .cv {
-        width: 100%;
-        margin: 0;
-        grid-template-columns: 1fr;
+    :root {
+        --navy: #173c57;
+        --navy-dark: #102d42;
+        --blue: #2f6f95;
+        --accent: #5fa8c9;
+        --text: #263238;
+        --muted: #687780;
+        --light: #eef3f6;
+        --border: #d8e0e5;
+        --white: #ffffff;
     }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        margin: 0;
+        background: #e9eef1;
+        font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+        color: var(--text);
+    }
+
+    /* =========================
+       CV CONTAINER
+    ========================= */
+
+    .cv {
+        width: 920px;
+        min-height: 1180px;
+        margin: 40px auto;
+        background: var(--white);
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        box-shadow: 0 15px 45px rgba(16, 45, 66, 0.15);
+        overflow: hidden;
+    }
+
+    /* =========================
+       SIDEBAR
+    ========================= */
 
     .sidebar {
-        padding: 30px;
+        background: var(--navy);
+        color: var(--white);
+        padding: 42px 30px;
+        position: relative;
     }
 
+    .sidebar::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 6px;
+        background: var(--accent);
+    }
+
+    /* PROFILE PHOTO */
+
+    .profile-photo {
+        width: 145px;
+        height: 145px;
+        margin: 0 auto 38px;
+        border-radius: 50%;
+        border: 4px solid rgba(255,255,255,0.9);
+        overflow: hidden;
+        background: #d9dfe2;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+
+    .profile-photo img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+    }
+
+    /* SIDEBAR SECTIONS */
+
+    .side-section {
+        margin-bottom: 34px;
+    }
+
+    .side-title {
+        color: #ffffff;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        margin-bottom: 16px;
+        padding-bottom: 9px;
+        border-bottom: 1px solid rgba(255,255,255,0.35);
+        position: relative;
+    }
+
+    .side-title::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+        width: 35px;
+        height: 2px;
+        background: var(--accent);
+    }
+
+    .contact p {
+        margin: 12px 0;
+        font-size: 12px;
+        line-height: 1.5;
+        color: #e7eef2;
+    }
+
+    /* EDUCATION */
+
+    .education-item {
+        margin-bottom: 23px;
+    }
+
+    .education-item:last-child {
+        margin-bottom: 0;
+    }
+
+    .education-item .year {
+        color: var(--accent);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.7px;
+        margin-bottom: 5px;
+    }
+
+    .education-item strong {
+        display: block;
+        color: #ffffff;
+        font-size: 12px;
+        line-height: 1.45;
+        margin-bottom: 5px;
+    }
+
+    .education-item p {
+        margin: 2px 0;
+        font-size: 11px;
+        line-height: 1.5;
+        color: #dce6eb;
+    }
+
+    /* SKILLS */
+
+    .skills ul,
+    .languages ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .skills li,
+    .languages li {
+        font-size: 11px;
+        margin-bottom: 9px;
+        color: #e5edf1;
+        position: relative;
+        padding-left: 15px;
+    }
+
+    .skills li::before,
+    .languages li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 7px;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--accent);
+    }
+
+    /* =========================
+       MAIN CONTENT
+    ========================= */
+
     .main {
-        padding: 35px 25px;
+        padding: 50px 48px 45px;
+    }
+
+    /* HEADER */
+
+    .header {
+        margin-bottom: 45px;
     }
 
     .name {
-        font-size: 30px;
+        margin: 0;
+        font-size: 39px;
+        line-height: 1.1;
+        font-weight: 800;
+        letter-spacing: 0.5px;
+        color: var(--text);
     }
+
+    .name span {
+        color: var(--navy);
+        font-weight: 400;
+    }
+
+    .position {
+        margin-top: 9px;
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 2px;
+    }
+
+    .short-line {
+        width: 55px;
+        height: 4px;
+        margin-top: 16px;
+        background: var(--accent);
+    }
+
+    /* MAIN SECTION */
+
+    .main-section {
+        margin-bottom: 35px;
+    }
+
+    .main-title {
+        position: relative;
+        color: var(--navy);
+        font-size: 14px;
+        font-weight: 800;
+        letter-spacing: 2px;
+        margin: 0 0 17px;
+        padding-bottom: 9px;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .main-title::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+        width: 45px;
+        height: 2px;
+        background: var(--accent);
+    }
+
+    .profile-text {
+        font-size: 12px;
+        line-height: 1.8;
+        color: #4d5a61;
+        text-align: justify;
+        margin: 0;
+    }
+
+    /* =========================
+       PROJECT TIMELINE
+    ========================= */
+
+    .timeline {
+        position: relative;
+        margin-left: 6px;
+        padding-left: 25px;
+        border-left: 1px solid #c7d2d8;
+    }
+
+    .timeline-item {
+        position: relative;
+        margin-bottom: 25px;
+    }
+
+    .timeline-item:last-child {
+        margin-bottom: 0;
+    }
+
+    .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: -30px;
+        top: 4px;
+        width: 9px;
+        height: 9px;
+        background: var(--navy);
+        border: 3px solid #ffffff;
+        border-radius: 50%;
+        box-shadow: 0 0 0 1px var(--navy);
+    }
+
+    .timeline-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .timeline-header h3 {
+        margin: 0;
+        color: var(--text);
+        font-size: 15px;
+        font-weight: 700;
+    }
+
+    .date {
+        color: var(--blue);
+        background: #edf5f8;
+        padding: 4px 8px;
+        border-radius: 3px;
+        font-size: 10px;
+        font-weight: 700;
+        white-space: nowrap;
+    }
+
+    .job-title {
+        margin: 5px 0 8px;
+        color: var(--muted);
+        font-size: 11px;
+        font-style: italic;
+    }
+
+    .timeline-item ul {
+        margin: 0;
+        padding-left: 17px;
+    }
+
+    .timeline-item li {
+        margin-bottom: 6px;
+        color: #4d5a61;
+        font-size: 11px;
+        line-height: 1.6;
+    }
+
+    /* =========================
+       PERSONAL INFORMATION
+    ========================= */
+
+    .personal-info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 25px;
+    }
+
+    .info-item {
+        padding: 9px 0;
+        border-bottom: 1px solid #edf0f2;
+        font-size: 11px;
+    }
+
+    .info-label {
+        display: block;
+        color: var(--muted);
+        font-size: 9px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 3px;
+    }
+
+    .info-value {
+        color: var(--text);
+        font-weight: 600;
+    }
+
+    /* =========================
+       REFERENCES
+    ========================= */
 
     .references {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Print */
-@media print {
-    body {
-        background: white;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
     }
 
-    .cv {
-        width: 100%;
-        margin: 0;
-        box-shadow: none;
+    .reference {
+        padding: 15px;
+        background: #f6f8f9;
+        border-left: 3px solid var(--accent);
     }
-}
+
+    .reference h3 {
+        margin: 0 0 6px;
+        color: var(--text);
+        font-size: 12px;
+    }
+
+    .reference p {
+        margin: 3px 0;
+        color: var(--muted);
+        font-size: 10px;
+        line-height: 1.5;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 750px) {
+
+        body {
+            background: #ffffff;
+        }
+
+        .cv {
+            width: 100%;
+            min-height: auto;
+            margin: 0;
+            grid-template-columns: 1fr;
+            box-shadow: none;
+        }
+
+        .sidebar {
+            padding: 35px 28px;
+        }
+
+        .main {
+            padding: 35px 28px;
+        }
+
+        .profile-photo {
+            margin-bottom: 30px;
+        }
+
+        .name {
+            font-size: 31px;
+        }
+
+        .position {
+            font-size: 11px;
+        }
+
+        .personal-info,
+        .references {
+            grid-template-columns: 1fr;
+        }
+
+        .timeline-header {
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 6px;
+        }
+    }
+
+    /* =========================
+       PRINT
+    ========================= */
+
+    @media print {
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        body {
+            background: white;
+        }
+
+        .cv {
+            width: 100%;
+            min-height: 100vh;
+            margin: 0;
+            box-shadow: none;
+        }
+    }
 </style>
 </head>
 
@@ -269,15 +480,18 @@ body {
 
 <div class="cv">
 
-    <!-- ================= LEFT SIDEBAR ================= -->
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
     <aside class="sidebar">
 
-        <!-- PROFILE PHOTO -->
         <div class="profile-photo">
             <img src="profile.jpg" alt="Mark Ian Lazaro">
         </div>
 
         <!-- CONTACT -->
+
         <div class="side-section contact">
 
             <div class="side-title">CONTACT</div>
@@ -289,37 +503,55 @@ body {
         </div>
 
         <!-- EDUCATION -->
+
         <div class="side-section">
 
             <div class="side-title">EDUCATION</div>
 
             <div class="education-item">
-                <div class="year">2023 - PRESENT</div>
-                <strong>PHINMA UNIVERSITY OF PANGASINAN</strong>
-                <p>• Bachelor of Science in Information Technology</p>
-                <p>• 4th Year College</p>
+
+                <div class="year">2023 — PRESENT</div>
+
+                <strong>
+                    PHINMA UNIVERSITY OF PANGASINAN
+                </strong>
+
+                <p>Bachelor of Science in Information Technology</p>
+                <p>4th Year College</p>
+
             </div>
 
             <div class="education-item">
-                <div class="year">2021 - 2023</div>
-                <strong>DAMORTIS NATIONAL HIGH SCHOOL</strong>
-                <p>• Senior High School</p>
-                <p>• Graduated: 2023</p>
+
+                <div class="year">2021 — 2023</div>
+
+                <strong>
+                    DAMORTIS NATIONAL HIGH SCHOOL
+                </strong>
+
+                <p>Senior High School</p>
+                <p>Graduated: 2023</p>
+
             </div>
 
             <div class="education-item">
-                <strong>DAMORTIS ELEMENTARY SCHOOL</strong>
+
+                <strong>
+                    DAMORTIS ELEMENTARY SCHOOL
+                </strong>
+
             </div>
 
         </div>
 
         <!-- SKILLS -->
+
         <div class="side-section skills">
 
             <div class="side-title">SKILLS</div>
 
             <ul>
-                <li>HTML & CSS</li>
+                <li>HTML &amp; CSS</li>
                 <li>JavaScript</li>
                 <li>UI/UX Design</li>
                 <li>Database Management</li>
@@ -333,6 +565,7 @@ body {
         </div>
 
         <!-- LANGUAGES -->
+
         <div class="side-section languages">
 
             <div class="side-title">LANGUAGES</div>
@@ -346,52 +579,72 @@ body {
 
     </aside>
 
-    <!-- ================= RIGHT SIDE ================= -->
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
     <main class="main">
 
         <!-- HEADER -->
-        <h1 class="name">
-            MARK IAN <span>LAZARO</span>
-        </h1>
 
-        <div class="position">
-            INFORMATION TECHNOLOGY STUDENT
-        </div>
+        <header class="header">
 
-        <div class="short-line"></div>
+            <h1 class="name">
+                MARK IAN <span>LAZARO</span>
+            </h1>
+
+            <div class="position">
+                INFORMATION TECHNOLOGY STUDENT
+            </div>
+
+            <div class="short-line"></div>
+
+        </header>
+
 
         <!-- PROFILE -->
+
         <section class="main-section">
 
-            <h2 class="main-title">PROFILE</h2>
+            <h2 class="main-title">
+                PROFILE
+            </h2>
 
             <p class="profile-text">
-                A motivated 4th-year Bachelor of Science in Information
-                Technology student with an interest in web development,
+                A motivated fourth-year Bachelor of Science in Information
+                Technology student with a strong interest in web development,
                 system design, UI/UX design, and database management.
-                Experienced in working on academic software projects,
-                system testing, and team-based development. Eager to
-                gain practical experience and contribute technical and
-                problem-solving skills in a professional environment.
+                Experienced in academic software projects, system testing,
+                interface development, and collaborative team-based work.
+                Seeking an opportunity to apply technical and problem-solving
+                skills while gaining practical experience in a professional
+                environment.
             </p>
 
         </section>
 
+
         <!-- PROJECT EXPERIENCE -->
+
         <section class="main-section">
 
-            <h2 class="main-title">PROJECT EXPERIENCE</h2>
+            <h2 class="main-title">
+                PROJECT EXPERIENCE
+            </h2>
 
             <div class="timeline">
 
                 <div class="timeline-item">
 
                     <div class="timeline-header">
+
                         <h3>ReFoundly</h3>
 
                         <span class="date">
-                            Capstone Project
+                            CAPSTONE PROJECT
                         </span>
+
                     </div>
 
                     <div class="job-title">
@@ -399,24 +652,27 @@ body {
                     </div>
 
                     <ul>
+
                         <li>
-                            Designed a web-based platform for reporting
-                            and searching lost and found items.
+                            Designed a web-based platform for reporting,
+                            managing, and searching lost and found items.
                         </li>
 
                         <li>
-                            Participated in system design, database design,
-                            and user interface development.
+                            Participated in system architecture, database
+                            design, and user interface development.
                         </li>
 
                         <li>
-                            Conducted system testing and evaluation.
+                            Conducted system testing and evaluation to
+                            identify usability and functional issues.
                         </li>
 
                         <li>
                             Collaborated with team members using
-                            Agile/Scrum methodology.
+                            Agile/Scrum development practices.
                         </li>
+
                     </ul>
 
                 </div>
@@ -425,40 +681,106 @@ body {
 
         </section>
 
+
         <!-- PERSONAL INFORMATION -->
+
         <section class="main-section">
 
-            <h2 class="main-title">PERSONAL INFORMATION</h2>
+            <h2 class="main-title">
+                PERSONAL INFORMATION
+            </h2>
 
-            <div class="profile-text">
+            <div class="personal-info">
 
-                <p><strong>Date of Birth:</strong> June 08, 2005</p>
-                <p><strong>Nationality:</strong> Filipino</p>
-                <p><strong>Address:</strong> Damortis, Santo Tomas, La Union</p>
+                <div class="info-item">
+
+                    <span class="info-label">
+                        Date of Birth
+                    </span>
+
+                    <span class="info-value">
+                        June 08, 2005
+                    </span>
+
+                </div>
+
+                <div class="info-item">
+
+                    <span class="info-label">
+                        Nationality
+                    </span>
+
+                    <span class="info-value">
+                        Filipino
+                    </span>
+
+                </div>
+
+                <div class="info-item">
+
+                    <span class="info-label">
+                        Address
+                    </span>
+
+                    <span class="info-value">
+                        Damortis, Santo Tomas, La Union
+                    </span>
+
+                </div>
 
             </div>
 
         </section>
 
+
         <!-- REFERENCES -->
+
         <section class="main-section">
 
-            <h2 class="main-title">REFERENCE</h2>
+            <h2 class="main-title">
+                REFERENCES
+            </h2>
 
             <div class="references">
 
                 <div class="reference">
-                    <h3>Reference Name</h3>
-                    <p>Position / Organization</p>
-                    <p>Phone: 09XX-XXX-XXXX</p>
-                    <p>Email: reference@email.com</p>
+
+                    <h3>
+                        Reference Name
+                    </h3>
+
+                    <p>
+                        Position / Organization
+                    </p>
+
+                    <p>
+                        Phone: 09XX-XXX-XXXX
+                    </p>
+
+                    <p>
+                        Email: reference@email.com
+                    </p>
+
                 </div>
 
                 <div class="reference">
-                    <h3>Reference Name</h3>
-                    <p>Position / Organization</p>
-                    <p>Phone: 09XX-XXX-XXXX</p>
-                    <p>Email: reference@email.com</p>
+
+                    <h3>
+                        Reference Name
+                    </h3>
+
+                    <p>
+                        Position / Organization
+                    </p>
+
+                    <p>
+                        Phone: 09XX-XXX-XXXX
+                    </p>
+
+                    <p>
+                        Email: reference@email.com
+                    </p>
+
                 </div>
 
             </div>
